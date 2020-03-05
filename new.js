@@ -1,3 +1,6 @@
+console.log(1)
+
+
 function recaptchaSubmit(e) {
     $("form").submit()
 }

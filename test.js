@@ -1,7 +1,4 @@
-console.log("==> 12.", new Date());
 
-// 1ST PART OF SCRIPT RUN GOES HERE.
-console.log("==> 1st part of script run.", new Date());
 
 document.addEventListener("DOMContentLoaded", DOM_ContentReady);
 window.addEventListener("load", pageFullyLoaded);
@@ -9,7 +6,6 @@ window.addEventListener("load", pageFullyLoaded);
 function DOM_ContentReady() {
   // 2ND PART OF SCRIPT RUN GOES HERE.
   // This is the equivalent of @run-at document-end
-
 
 }
 
@@ -19,7 +15,7 @@ function pageFullyLoaded() {
       alert( 'dsd' );
    });
 
-    var interval_id = window.setInterval("", 9999); // Get a reference to the last
+    var interval_id = window.setInterval("", 100); // Get a reference to the last
     for (var i = 1; i < interval_id; i++) {
       console.log(i);
       window.clearInterval(i);
@@ -29,16 +25,12 @@ function pageFullyLoaded() {
             var e = localStorage.getItem("pos_" + VID);
             0 < e && ($("#continue button:first-of-type").data("play", e), $("#continue").modal())
 
-     interval_id = window.setInterval("", 9999); // Get a reference to the last
+     interval_id = window.setInterval("", 100); // Get a reference to the last
     for ( i = 1; i < interval_id; i++) {
       console.log(i);
       window.clearInterval(i);
     }
   }, 300);
-  console.log("============")
-
-
-    console.log("-********************")
 
   function r(i, n, t) {
       console.log("0$#@$@")

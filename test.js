@@ -99,23 +99,28 @@ function pageFullyLoaded() {
               xhrFields: {
                   withCredentials: !0
               }
-          }).done(function() {
-              void 0 === s.download ? ($(".download").addClass("disabled"), 
-              $("#fakeDL").removeClass("hidden")) : ($('#afterLoad .download:not("#fakeDL")').remove(), $.each(s.download, 
-              function(e, a) {
-                  download[e] = "//" + i.url + "/" + d + "/episode/" + e + "/" + Sname[1] + ".S" + season + "E" + episode + "_" + e + "P/" + VID + ".mp4?token=" + a + "&time=" + i.time + "&uid=" + i.uid, 
-                  $newBtn = $("#fakeDL").clone().removeAttr("id").removeClass("hidden").insertAfter("#fakeDL"), 
-                  $($newBtn).attr("href", download[e]).find("span").text("הורדת הפרק באיכות " + e + "p"), 
-                  $("#player .download").attr("href", download[e])
-              }), $("#fakeDL").addClass("hidden"));
-              var t = [];
-              $.each(s.watch, function(e, a) {
-                  t.push({
-                      src: "//" + s.url + "/" + o.watch + "/episode/" + e + "/" + VID + ".mp4?token=" + a + "&time=" + s.time + "&uid=" + s.uid,
-                      type: "video/mp4",
-                      label: e + "P"
-                  })
-              });
+            }).done(function() {
+                void 0 === i.download ? ($(".download").addClass("disabled"),
+                $("#fakeDL").removeClass("hidden")) : ($('#afterLoad .download:not("#fakeDL")').remove(),
+                $.each(i.download, function(e, a) {
+                    download[e] = "//" + i.url + "/" + d + "/episode/" + e + "/" + Sname[1] + ".S" + season + "E" + episode + "_" + e + "P/" + VID + ".mp4?token=" + a + "&time=" + i.time + "&uid=" + i.uid,
+                    $newBtn = $("#fakeDL").clone().removeAttr("id").removeClass("hidden").insertAfter("#fakeDL"),
+                    $($newBtn).attr("href", download[e]).find("span").text("הורדת הפרק באיכות " + e + "p"),
+                    $("#player .download").attr("href", download[e])
+                }),
+                $("#fakeDL").addClass("hidden"));
+                var t = []
+                  , s = encodeURIComponent(getCookie("Sdarot"))
+                  , o = /playstation/i.test(window.navigator.userAgent);
+                $.each(i.watch, function(e, a) {
+                    surl = "//" + i.url + "/" + n + "/episode/" + e + "/" + VID + ".mp4?token=" + a + "&time=" + i.time + "&uid=" + i.uid,
+                    o && (surl += "&cookie=" + s),
+                    t.push({
+                        src: surl,
+                        type: "video/mp4",
+                        label: e + "P"
+                    })
+                });
               var e = t.length;
               (t[e - 1].selected = !0) === i && ("function" == typeof window.history.pushState && window.history.pushState("", "", "/watch/" + SID + "-" + Sname[0] + "-" + Sname[1] + "/season/" + season + "/episode/" + episode), $("title").html("Sdarot.TV סדרות | " + Sname[2] + " עונה " + season + " פרק " + episode + " לצפייה ישירה"), $("#player .head p").text(s.heb + " / " + s.eng + " - עונה " + season + " פרק " + episode), $("#date").text(function(e) {
                   var a = new Date(1e3 * e),

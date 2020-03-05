@@ -158,7 +158,7 @@ function pageFullyLoaded() {
                     if ("undefined" != typeof counter && !1 !== counter && clearInterval(counter),
                     "donor" == e)
                         return s(a);
-                    timeout = 30,
+                    timeout = 1,
                     $("#loading #txt").text("נא להמתין...").show(),
                     $("#loading #spinner, #loading #waitTime").removeClass("hidden"),
                     counter = setInterval(function() {

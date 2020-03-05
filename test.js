@@ -100,8 +100,13 @@ function pageFullyLoaded() {
                   withCredentials: !0
               }
           }).done(function() {
-              void 0 === s.download ? ($(".download").addClass("disabled"), $("#fakeDL").removeClass("hidden")) : ($('#afterLoad .download:not("#fakeDL")').remove(), $.each(s.download, function(e, a) {
-                  download[e] = "//" + s.url + "/" + o.down + "/episode/" + e + "/" + Sname[1] + ".S" + season + "E" + episode + "_" + e + "P/" + VID + ".mp4?token=" + a + "&time=" + s.time + "&uid=" + s.uid, $newBtn = $("#fakeDL").clone().removeAttr("id").removeClass("hidden").insertAfter("#fakeDL"), $($newBtn).attr("href", download[e]).find("span").text("הורדת הפרק באיכות " + e + "p"), $("#player .download").attr("href", download[e])
+              void 0 === s.download ? ($(".download").addClass("disabled"), 
+              $("#fakeDL").removeClass("hidden")) : ($('#afterLoad .download:not("#fakeDL")').remove(), $.each(s.download, 
+              function(e, a) {
+                  download[e] = "//" + i.url + "/" + d + "/episode/" + e + "/" + Sname[1] + ".S" + season + "E" + episode + "_" + e + "P/" + VID + ".mp4?token=" + a + "&time=" + i.time + "&uid=" + i.uid, 
+                  $newBtn = $("#fakeDL").clone().removeAttr("id").removeClass("hidden").insertAfter("#fakeDL"), 
+                  $($newBtn).attr("href", download[e]).find("span").text("הורדת הפרק באיכות " + e + "p"), 
+                  $("#player .download").attr("href", download[e])
               }), $("#fakeDL").addClass("hidden"));
               var t = [];
               $.each(s.watch, function(e, a) {
